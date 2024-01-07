@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Area of Circle</title>
+    <style>
+        body {
+            background-image: url('https://scontent.fmnl4-1.fna.fbcdn.net/v/t1.15752-9/385505887_1482342232548193_6110318106471441178_n.png?_nc_cat=103&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeH_HojMbM-XNnALf0dUfgTf54HyvMIdSKrngfK8wh1IqnxQ4mrKwKpfmxeN07xyv7L_Aj4hQPNiG2ez-qpaEX0h&_nc_ohc=rA5pRcnjfFEAX-51Iq4&_nc_ht=scontent.fmnl4-1.fna&oh=03_AdRZRBXZD06yVz--ZacPPJtHEi0fZD0N-GUnIRtpIW6jTg&oe=6575108E');
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            background-attachment: fixed; /* Fix the background image while scrolling */
+            color: #000000; /* Set the default font color */
+            font-family: 'Helvetica',sans serif;
+        }
+
+        .image-container {
+            display: flex; /* Use flexbox to align items horizontally */
+            justify-content: flex-end; /* Align items to the end (right in this case) */
+            position: fixed; /* Fix the position so it doesn't move while scrolling */
+            top: 0; /* Align to the top */
+            right: 0; /* Align to the right */
+            padding: 10px; /* Add some padding for better visibility */
+            width:12%
+        }
+
+        .image-container a {
+            margin-left: 20px; /* Add some spacing between the images */
+        }
+
+        p {
+            background-color: rgba(254, 126, 177, 0.6); /* Set the background color */
+            color: #FFFFFF; /* Set the text color */
+            border: 2px solid #000000; /* outside border */
+            padding: 13px; /* Add some padding around the text for better visibility */
+            width: 70%; /* Adjust the width as needed */
+            margin: 0 auto; /* Center the element horizontally */
+        }
+
+        img {
+            display: block; /* Center the image */
+            margin: 0 auto;
+        }
+
+        table {
+            margin-top: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #FFFFFF;
+            border: 2px solid #000000; /* outside border */
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            padding: 8px 12px;
+            font-size: 16px;
+            background-color: #FE7EB1;
+            color: #FFFFFF;
+            border: 2px solid #000000; /* outside border */
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #FF408C;
+        }
+    </style>
+</head>
+<body bgcolor="#102132" text="#FFFFFF">
+
+    <h1 align="center">Getting the Area of the Circle</h1>
+
+    <p align="center">Area of a circle is the region covered or enclosed by its boundary and is calculated using the formula A = πr2.
+        It is measured in square units. The below figure illustrates the area of a circle with radius “r”.</p>
+
+    <br>
+
+    <img src=https://scontent.fmnl4-4.fna.fbcdn.net/v/t1.15752-9/385529707_7588497254512608_4759757271067992951_n.png?_nc_cat=102&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeHU_u8G1l8bO3lz3Ytzmlku5JeQhtIW6OLkl5CG0hbo4qaVbFRtQjsIYHiziAzIDKj1osI1yYeNjpCw584JitU7&_nc_ohc=Xgvzhwox0eQAX_BLe1y&_nc_ht=scontent.fmnl4-4.fna&oh=03_AdRRZ2GJoJYm3QlOG8JSnsOnny1j4oGz3MexaNK3Wlqrwg&oe=65754F01
+         width=280 height=250>
+
+    <br>
+
+    <table align="center">
+        <tr>
+            <form action="/areaOfcircle" method="post">
+            <td>
+                <label for="inputNumber">Enter Radius of Circle:</label>
+            </td>
+            <td>
+                <input type="number" id="inputNumber" name=inputNumber size="20">
+                <input type="submit" value="Convert">
+            </td>
+            </form>
+        </tr>
+    </table>
+
+    <table align="center">
+        <tr>
+            <form action="/areaOfcircle" method="post">
+            <td>
+                <label for="inputDiameter">Enter Diameter of Circle:</label>
+            </td>
+            <td>
+                <input type="number" id="inputDiameter" name=inputDiameter size="20">
+                <input type="submit" value="Convert">
+            </td>
+
+            </form>
+        </tr>
+    </table>
+
+    <br>
+    {% if result %}
+    <p align="center">Area of Circle: {{ result }}</p>
+    {% endif %}
+
+
+    <div class="image-container">
+        <a href="/">
+            <img src= "{{ url_for('static', filename='home.png') }}"
+                 width="25" height="25" alt="Home">
+
+        <a href="/profile">
+           <img src="{{ url_for('static', filename='me.png') }}"
+                width="25" height="25" alt="Profile">
+
+        <a href="/works">
+           <img src="{{ url_for('static', filename='folder.png') }}"
+                width="25" height="25" alt="Profile">
+
+        <a href="/contact">
+           <img src="{{ url_for('static', filename='email.png') }}"
+                width="25" height="25" alt="Profile">
+    </div>
+
+</body>
+</html>

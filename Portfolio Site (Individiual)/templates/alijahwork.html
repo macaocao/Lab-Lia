@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work Page</title>
+    <style>
+      body {
+            background-image: url('{{ url_for('static', filename='menubg.png') }}');
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            background-attachment: fixed; /* Fix the background image while scrolling */
+            color: #FFFFFF; /* Set the default font color */
+        }
+
+      .image-container {
+            display: flex; /* Use flexbox to align items horizontally */
+            justify-content: center; /* Space items evenly with space on both sides */
+        }
+
+        .image-container a {
+            text-align: center; /* Center the text within each link */
+            margin: 0 50px;
+            display: inline-block;
+            transition: box-shadow 0.3s;
+        }
+
+        .image-container a:hover {
+            box-shadow: 0 0 50px #FE7EB1;
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            margin: 20px;
+        }
+
+        .icons a {
+            margin-left: 20px;
+        }
+
+        .icons img {
+            width: 25px;
+            height: 25px;
+        }
+
+        img {
+            display: block; /* Center the image */
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body bgcolor="#102132" text="#FFFFFF">
+
+      <img src="{{ url_for('static', filename='worksheader.png') }}"
+          width="1000" height="310" alt="Works">
+
+      <div class="image-container">
+        <a href="/UpperCase">
+            <img src="{{ url_for('static', filename='uppercase.png') }}"
+            width="180" height="200" alt="UpperCase">
+        </a>
+        <a href="/areaOfcircle">
+            <img src="{{ url_for('static', filename='circle icon.png') }}"
+            width="180" height="200" alt="Area of a Circle">
+        </a>
+        <a href="/areaOfTriangle">
+            <img src="{{ url_for('static', filename='triangle icon.png') }}"
+            width="210" height="200" alt="Area of a Triangle">
+        </a>
+    </div>
+
+    <div class="icons">
+        <a href="/">
+            <img src="{{ url_for('static', filename='home.png') }}" alt="Home">
+        </a>
+
+        <a href="/alijahprofile">
+            <img src="{{ url_for('static', filename='me.png') }}" alt="Profile">
+        </a>
+
+        <a href="/alijahworks">
+            <img src="{{ url_for('static', filename='folder.png') }}" alt="Works">
+        </a>
+
+        <a href="/alijahcontact">
+            <img src="{{ url_for('static', filename='email.png') }}" alt="Contact">
+        </a>
+    </div>
+</body>
+</html>

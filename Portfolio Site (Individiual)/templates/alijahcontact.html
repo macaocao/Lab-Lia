@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Page</title>
+    <style>
+        body {
+            background-image: url('{{ url_for('static', filename='menubg.png') }}');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #000000;
+            font-family: 'Helvetica', sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allow flex items to wrap to the next line */
+            padding: 30px;
+            width: 65%;
+            background-color: rgba(254, 126, 177, 0.6); /* the fourth argument increases the opacity*/
+            color: #FFFFFF;
+            margin: 0 auto; /* Center the container horizontally */
+            margin-top: 20px;
+        }
+
+        .text {
+            text-align: left;
+            width: 60%; /* Adjust the width of the text */
+        }
+
+        .image {
+            width: 25%; /* Adjust the width of the image */
+            height: auto; /* Maintain the aspect ratio of the image */
+            margin-top: 20px; /* Add margin to separate image from text */
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            margin: 20px;
+        }
+
+        .icons a {
+            margin-left: 20px;
+        }
+
+        .icons img {
+            width: 25px;
+            height: 25px;
+        }
+
+        .icon-container {
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 360px;
+            margin: 20px;
+        }
+
+        .icon-container a {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body bgcolor="#102132" text="#FFFFFF">
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="text">
+            <h1>Contact Details</h1>
+            <p>You can reach me here on the following platforms I'm at.</p>
+            <p>School Email: maalijahcasandrapeugenio@iskolarngbayan.pup.edu.ph</p>
+            <p>Personal Email: mace.eugenio@gmail.com</p>
+            <br>
+            <br>
+            <br>
+        </div>
+
+        <div class="icon-container">
+            <a href="https://www.linkedin.com/in/alijah-eugenio-aba6aa287/">
+                <img src="{{ url_for('static', filename='linked in.png') }}" alt="LinkedIn"
+                     width="55" height="50">
+            </a>
+            <a href="https://github.com/macaocao">
+                <img src="{{ url_for('static', filename='github.png') }}" alt="Github"
+                     width="55" height="50">
+            </a>
+            <a href="https://www.upwork.com/freelancers/~01f9ae739190ac8b57">
+                <img src="{{ url_for('static', filename='upwork.png') }}" alt="Upwork"
+                     width="55" height="50">
+            </a>
+        </div>
+
+        <img class="image" src="{{ url_for('static', filename='pic.png') }}" alt="Profile Image">
+    </div>
+
+    <div class="icons">
+        <a href="/">
+            <img src="{{ url_for('static', filename='home.png') }}" alt="Home">
+        </a>
+
+        <a href="/alijahprofile">
+            <img src="{{ url_for('static', filename='me.png') }}" alt="Profile">
+        </a>
+
+        <a href="/alijahworks">
+            <img src="{{ url_for('static', filename='folder.png') }}" alt="Works">
+        </a>
+
+        <a href="/alijahcontact">
+            <img src="{{ url_for('static', filename='email.png') }}" alt="Contact">
+        </a>
+    </div>
+
+</body>
+</html>
